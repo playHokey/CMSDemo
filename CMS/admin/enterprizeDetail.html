@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>gomine</title>
+       <link rel="stylesheet" type="text/css" href="../common/layui/css/layui.css" />
+       <link rel="stylesheet" type="text/css" href="../common/bootstrap/css/bootstrap.css"/>
+      <!--  <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/style.css" /> -->
+    <style type="text/css">
+ html,body{
+width:100%; 
+
+height:100%;
+
+}  
+
+/* 以下设置全屏 */
+
+body {
+margin-left: 15px;
+margin-top: -34px;
+margin-right: 0px;
+margin-bottom: 0px;
+overflow-x: hidden;
+color: #494949;
+font-size: 16px;}
+
+   .sy_left_box {
+            height: 100%;
+            background: #2c2c2c;
+        }
+        
+        .sy_log {
+            margin-top: 50px;
+            text-align: center;
+            color: white;
+            margin-bottom: 20px;
+        }
+        
+        .sy_log img {
+            background: url(img/log_tx.png) no-repeat;
+            width: 100px;
+            height: 100px;
+            border: 1px solid white;
+            border-radius: 50px;
+            display: block;
+            margin: auto;
+            margin-bottom: 10px;
+        }
+        
+        .layui-nav-tree {
+            width: auto;
+            text-align: center;
+        }
+        
+        .xtsy_icon {
+            display: inline-block;
+            width: 18px;
+            height: 17px;
+            background: url(img/xitongshouye.png) no-repeat;
+            vertical-align: middle;
+        }
+        
+        .wdgl_icon {
+            display: inline-block;
+            width: 18px;
+            height: 17px;
+            background: url(img/wangdiangailue.png) no-repeat;
+            vertical-align: middle;
+        }
+        
+        .wdxz_icon {
+            display: inline-block;
+            width: 18px;
+            height: 17px;
+            background: url(img/wangdianxuanzhi.png) no-repeat;
+            vertical-align: middle;
+        }
+        
+        .sjwh_icon {
+            display: inline-block;
+            width: 18px;
+            height: 17px;
+            background: url(img/shujuweihu.png) no-repeat;
+            vertical-align: middle;
+        }
+        
+        .xtgl_icon {
+            display: inline-block;
+            width: 18px;
+            height: 17px;
+            background: url(img/xitongguanli.png) no-repeat;
+            vertical-align: middle;
+        }
+        
+        .layui-nav {
+            background: none;
+        }
+        
+        #sy_login {
+            display: block;
+            margin-top: 10px;
+            margin-left: 20px;
+        }
+        /*字体颜色*/
+        .layui-nav .layui-nav-item a {
+            color: #5a5a5a;
+        }
+        
+        .layui-breadcrumb a {
+            color: #999797 !important;
+        }
+        
+        .acte {
+            background: #d2020f !important;
+            color: white !important;
+        }
+        
+        #sy_btn1 button,#sy_btn2 button ,#sy_btn3 button ,#sy_btn4 button ,#sy_btn5 button{
+            background: white;
+            color: #5e5e5e;
+            margin-left: 20px;
+            display: inline-block;
+            border: 1px solid red;
+        }
+        .layui-nav .layui-nav-item a:hover,
+        .layui-nav .layui-this a {
+            color: #000000;/*鼠标以上字体颜色*/
+        }
+        
+        .layui-nav-more {
+            border-top-color: rgba(20, 20, 20, .7) !important;
+        }
+        
+        .layui-nav-mored {
+            border-color: transparent transparent #000000 !important;
+        }
+        
+        .layui-this,.layui-nav-tree .layui-this>a  {
+            background-color: #222222 !important;
+            color: #fff;
+        }
+    
+       .a table tr td{
+        
+        padding-left: 5px;
+       }
+    </style>
+</head>
+
+<body>
+  <table class="table    table-condensed">
+
+         </td>
+    
+            <td width="90%"   height="100%" valign="top">
+               <!-- 最上面 -->
+                 <div style="margin-left:30px;margin-right:65px;margin-top:35px; height:200px;background:#f8f8f8;">
+                        <table  style="width:100%;height:100%;border:1px solid #c8c8c8;" border="0" >
+                           <tr>
+                             <td style="border-right:none;padding-left:30px;padding-top:40px;padding-bottom:30px;width:160px;">
+                               <img src="images/icbcLogo.png" style="width:120px;height:130px;">
+                             </td>
+                             <td  style="line-height:25px;border-right:none;border-left:none;padding-left:0px;">
+                               
+                                <b> <span style="font-size:16px">小米科技有限责任公司</span><br><br>
+                                              电话： 60606666-1000   &nbsp;&nbsp; GOMINE唯一号：33213411<br>
+                                              官网： www.xiaomi.com  &nbsp;&nbsp;   地址：北京市海淀区清河中街68号华润五彩城购物中心二期13层
+                          
+                               </td>
+                               <td style="padding:20px;border-left:none;padding-top:45px;" valign="top" align="right" >
+                                   
+                                   <div class="pull-right">
+                                   	<button class="btn btn-success">导出</button>
+                                   	<button class="btn btn-success">保存</button>
+                                   </div>
+                                  
+                               </td>
+                           </tr>
+                        </table>
+                </div>       
+
+              <div width="100%" >
+                   <!-- 字母 -->
+                   <div style="margin-top:50px;font-size:18px;margin-bottom:20px;margin-left:30px;">
+                    基本信息
+                       
+                   </div>
+                   <!-- 表格 -->
+                   <div style="margin-left:30px;margin-right:65px;" class="a">
+                        <table class="table  table-bordered table-hover table-condensed" >
+                           <tr>
+                             <td style="background:#f0f6fc;width:160px;">公司名称:</td>
+                             <td >小米科技有限公司</td>
+                             <td style="background:#f0f6fc;width:160px;">公司英文名称:</td>
+                             <td >xiaomi  inc</td>
+                           </tr>
+                           <tr>
+                             <td style="background:#f0f6fc;width:160px;">公司简称:</td>
+                             <td >小米公司</td>
+                             <td style="background:#f0f6fc;width:160px;">统一社会信用代码:</td>
+                             <td >44454566567567854</td>
+                           </tr>
+                           <tr>
+                             <td style="background:#f0f6fc;width:160px;">纳税人识别号:</td>
+                             <td >54363463465346534634</td>
+                             <td style="background:#f0f6fc;width:160px;">注册号:</td>
+                             <td >44454566567567854</td>
+                           </tr>
+                           <tr>
+                             <td style="background:#f0f6fc;width:160px;">法定代表人:</td>
+                             <td ><span style="color:#4f97f8;">赵钱孙</span></td>
+                             <td style="background:#f0f6fc;width:160px;">注册资本:</td>
+                             <td >3333333万元人民币</td>
+                           </tr>
+                           <tr>
+                             <td style="background:#f0f6fc;width:160px;">运营状况:</td>
+                             <td >在营</td>
+                             <td style="background:#f0f6fc;width:160px;">成立时间:</td>
+                             <td >2012-10-23</td>
+                           </tr>
+                           <tr>
+                             <td style="background:#f0f6fc;width:160px;">别名:</td>
+                             <td >小米科技公司</td>
+                             <td style="background:#f0f6fc;width:160px;">金融机构代码:</td>
+                             <td >7567854</td>
+                           </tr>
+                           <tr>
+                             <td style="background:#f0f6fc;width:160px;">公司所有制:</td>
+                             <td >私营</td>
+                             <td style="background:#f0f6fc;width:160px;">员工人数区间:</td>
+                             <td >4854人以上</td>
+                           </tr>
+                           <tr>
+                             <td style="background:#f0f6fc;width:160px;">省市:</td>
+                             <td >北京市</td>
+                             <td style="background:#f0f6fc;width:160px;">区号:</td>
+                             <td >010</td>
+                           </tr>
+                           <tr>
+                             <td style="background:#f0f6fc;width:160px;">邮编:</td>
+                             <td >10000</td>
+                             <td style="background:#f0f6fc;width:160px;">电话:</td>
+                             <td >3333333-333</td>
+                           </tr>
+                           <tr>
+                             <td style="background:#f0f6fc;width:160px;">公司地址:</td>
+                             <td colspan="3">北京市海淀区清河中街68号华润五彩城购物中心二期13层</td>
+                           </tr>
+                            <tr>
+                             <td style="background:#f0f6fc;width:160px;">公司业务介绍:</td>
+                             <td colspan="3">手机技术开发；手机生产、手机服务；（限海淀区永捷北路2号二层经营）从事互联网文化活动；技术开发；货物进出口、技术进出口、代理进出口；销售通讯设备；维修仪器仪表；维修办公设备；承办展览展示活动；会议服务；筹备、策划、组织大型庆典；设计、制作、代理、发布广告。（企业依法自主选择经营项目，开展经营活动；依法须经批准的项目，经相关部门批准后依批准的内容开展经营活动；不得从事本市产业政策禁止和限制类项目的经营活动。） </td>
+                           </tr>
+                        </table>
+                        
+                   </div>
+                    <!-- 字母 -->
+                   <div style="margin-top:50px;font-size:18px;margin-bottom:20px;margin-left:30px;">
+                    公司规模
+                       
+                   </div>
+                   <!-- 表格 -->
+                   <div style="margin-left:30px;margin-right:65px;" class="a">
+                        <table  style="width:60%;border:1px solid #c8c8c8;" border="1" >
+                           <tr>
+                             <td style="background:#f0f6fc;width:160px;">员工人数:</td>
+                             <td >3333</td>
+                             <td style="background:#f0f6fc;width:160px;">跟踪年份:</td>
+                             <td >2015年</td>
+                           </tr>
+                           <tr>
+                             <td style="background:#f0f6fc;width:160px;">分支机构区间:</td>
+                             <td >100以上</td>
+                             <td style="background:#f0f6fc;width:160px;">分支机构数:</td>
+                             <td >105</td>
+                           </tr>
+                           <tr>
+                             <td style="background:#f0f6fc;width:160px;">床位数区间:</td>
+                             <td >/</td>
+                             <td style="background:#f0f6fc;width:160px;">床位数:</td>
+                             <td >/</td>
+                           </tr>
+                           <tr>
+                             <td style="background:#f0f6fc;width:160px;">营业额区间:</td>
+                             <td >666666万人民币</td>
+                             <td style="background:#f0f6fc;width:160px;">营业额:</td>
+                             <td >3333333万元人民币</td>
+                           </tr>
+                           <tr>
+                             <td style="background:#f0f6fc;width:160px;">电话数量区间:</td>
+                             <td >500以上</td>
+                             <td style="background:#f0f6fc;width:160px;">电话数量:</td>
+                             <td >200</td>
+                           </tr>
+                           <tr>
+                             <td style="background:#f0f6fc;width:160px;">PC数量区间:</td>
+                             <td >5000~10000</td>
+                             <td style="background:#f0f6fc;width:160px;">PC数量:</td>
+                             <td >8888</td>
+                           </tr>
+                           <tr>
+                             <td style="background:#f0f6fc;width:160px;">服务器数量区间:</td>
+                             <td >1 ~ 50</td>
+                             <td style="background:#f0f6fc;width:160px;">服务器数量:</td>
+                             <td >15</td>
+                           </tr>
+                           <tr>
+                             <td style="background:#f0f6fc;width:160px;">存储数量区间:</td>
+                             <td >100 ~ 200</td>
+                             <td style="background:#f0f6fc;width:160px;">存储数量:</td>
+                             <td >123</td>
+                           </tr>
+                          
+                        </table>
+                        
+                   </div>
+              </div>
+            </td>
+     </tr>
+
+ </table>
+          
+
+  <!--<script type="text/javascript" src="js/mapbard31.3.js"></script>-->
+  <script src="../common/layui/lay/modules/jquery.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../common/layui/layui.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../common/bootstrap/js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/other.js" type="text/javascript" charset="utf-8"></script>
+    <script src="layui/layui.js" type="text/javascript" charset="utf-8"></script>
+   <!--<script type="text/javascript" src="http://cbjs.baidu.com/js/m.js"></script>-->
+ 
+</body>
+
+</html>
+

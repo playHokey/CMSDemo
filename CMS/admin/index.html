@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>企业信息查询后台管理系统</title>
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="format-detection" content="telephone=no">
+		<!-- load css -->
+		<link rel="stylesheet" type="text/css" href="../common/layui/css/layui.css" media="all">
+		<link rel="stylesheet" type="text/css" href="../common/global.css" media="all">
+		<link rel="stylesheet" type="text/css" href="css/index.css" media="all">
+		<link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css">
+		<style type="text/css">
+			.a table tr td{
+        height:40px;
+        padding-left: 5px;
+       }
+       .{
+       	font-family: "微软雅黑";
+       	font-size: 14px;
+       }
+		</style>
+	</head>
+
+	<body>
+		<div class="layui-layout layui-layout-admin " id="layui_layout">
+			<!-- 顶部区域 -->
+			<div class="layui-header header header-demo">
+				<div class="layui-main" >
+					<!-- logo区域 -->
+					<div class="admin-logo-box">
+						<span class="logo" href="#" title="logo"><img src="../common/images/cms_logo_bg.png" alt=""></span>
+					</div>
+					<!-- 顶级菜单区域 -->
+					<div class="layui-larry-menu larry-header-item larry-side-menu">
+						<ul class=" ">
+							<li class="layui-nav-item">
+								<span style="font-size: 18px !important; ">企业信息查询管理系统 </span>
+							</li>
+
+						</ul>
+					</div>
+					<!-- 右侧导航 -->
+					<ul class="layui-nav larry-header-item" id="larry-nav-side-top" >
+						<li class="layui-nav-item first">
+							<a href="javascript:;">
+								<img src="images/userimg.jpg" class="userimg">
+								<cite style="color: white;">常用功能</cite>
+								<span class="layui-nav-more"></span>
+							</a>
+							<dl class="layui-nav-child">
+								<dd>
+									<a href="javascript:;" data-url="dataSearch.html">
+										<i class="fa fa-search"></i>
+										<span>数据搜索</span>
+									</a>
+								</dd>
+								<dd>
+									<a href="javascript:;" data-url="dataMatch.html">
+										<i class="fa fa-files-o"></i>
+										<span>数据匹配</span>
+									</a>
+								</dd>
+								
+								<dd>
+									<a href="javascript:;" data-url="passwdUpdate.html">
+										<i class="fa fa-key"></i>
+										<span>密码更新</span>
+									</a>
+								</dd>
+
+							</dl>
+						</li>
+						
+						<li class="layui-nav-item">
+							<a href="login.html">
+								<img src="images/exitLogo.png" >
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<!-- 左侧侧边导航开始 -->
+			<div class="layui-side layui-side-bg layui-larry-side" id="larry-side"style="top: 90px;">
+				<div class="layui-side-scroll" id="larry-nav-side" lay-filter="side">
+					<!--<div class="user-photo">
+						<a class="img" title="我的头像">
+							<img src="images/user.jpg" class="userimg1"></a>
+						<p>你好！admin, 欢迎登录</p>
+					</div>-->
+					<!-- 左侧菜单 -->
+					<ul class="layui-nav layui-nav-tree">
+
+						<!-- 个人信息 -->
+						<li class="layui-nav-item">
+							<a href="javascript:;">
+								<i class="fa fa-database"></i>
+								<span>数据仓库</span>
+								<em class="layui-nav-more"></em>
+							</a>
+							<dl class="layui-nav-child">
+								<dd>
+									<a href="javascript:;" data-url="dataSearchDetail.html">
+										<i class="fa fa-search"></i>
+										<span>数据搜索</span>
+									</a>
+								</dd>
+								<dd>
+									<a href="javascript:;" data-url="update.htm">
+										<i class="fa fa-files-o"></i>
+										<span>数据匹配</span>
+									</a>
+								</dd>
+								<dd>
+									<a href="javascript:;" data-url="updateNew.htm">
+										<i class="fa fa-refresh"></i>
+										<span>数据更新</span>
+									</a>
+								</dd>
+								<dd>
+									<a href="javascript:;" data-url="dataLog.html">
+										<i class="fa fa-calendar"></i>
+										<span>操作日志</span>
+									</a>
+								</dd>
+							</dl>
+						</li>
+						<!-- 用户管理 -->
+						<li class="layui-nav-item">
+							<a href="javascript:;">
+								<i class="iconfont icon-jiaoseguanli2"></i>
+								<span>用户管理</span>
+								<em class="layui-nav-more"></em>
+							</a>
+							<dl class="layui-nav-child">
+								<dd>
+									<a href="javascript:;" data-url="userList.html">
+										<i class="iconfont icon-yonghu1" data-icon='icon-yonghu1'></i>
+										<span>用户列表</span>
+									</a>
+								</dd>
+								<dd>
+									<a href="javascript:;" data-url="passwdUpdate.html">
+										<i class="fa fa-key"></i>
+										<span>密码更新</span>
+									</a>
+								</dd>
+								<dd>
+									<a href="javascript:;">
+										<i class="iconfont icon-jiaoseguanli4" data-icon='icon-jiaoseguanli4'></i>
+										<span>角色列表</span>
+									</a>
+								</dd>
+								<dd>
+									<a href="javascript:;">
+										<i class="iconfont icon-quanxian2" data-icon='icon-quanxian2'></i>
+										<span>菜单管理</span>
+									</a>
+								</dd>
+								
+
+							</dl>
+						</li>
+						<!-- 内容管理 -->
+						<li class="layui-nav-item" disabled="disabled">
+							<a href="javascript:;">
+								<i class="iconfont icon-wenzhang1"></i>
+								<span>数据可视化</span>
+								<em class="layui-nav-more"></em>
+							</a>
+							
+						</li>
+
+						 <!--用户 -->
+						<!--<li class="layui-nav-item">
+							<a href="javascript:;">
+								<i class="iconfont icon-m-members"></i>
+								<span>用户管理</span>
+								<em class="layui-nav-more"></em>
+							</a>
+							<dl class="layui-nav-child">
+								<dd>
+									<a href="javascript:;">
+										<i class="iconfont icon-zhuti" data-icon='userlist.html'></i>
+										<span>用户列表</span>
+									</a>
+								</dd>
+								
+							</dl>
+						</li>-->
+
+						<!--<li class="layui-nav-item">
+							<a href="javascript:;">
+								<i class="iconfont icon-shengchengbaogao"></i>
+								<span>网站维护</span>
+								<em class="layui-nav-more"></em>
+							</a>
+							<dl class="layui-nav-child">
+								<dd>
+									<a href="javascript:;">
+										<i class="iconfont icon-zhuti" data-icon='icon-zhuti'></i>
+										<span>网站主题</span>
+									</a>
+								</dd>
+								<dd>
+									<a href="">
+										<i class="iconfont icon-database" data-icon='icon-database'></i>
+										<span>数据库管理</span>
+									</a>
+								</dd>
+								<dd>
+									<a href="">
+										<i class="iconfont icon-shengchengbaogao" data-icon='icon-shengchengbaogao'></i>
+										<span>生成页面</span>
+									</a>
+								</dd>
+								<dd>
+									<a href="">
+										<i class="iconfont icon-qingchuhuancun" data-icon='icon-qingchuhuancun'></i>
+										<span>更新缓存</span>
+									</a>
+								</dd>
+
+							</dl>
+						</li>-->
+
+						<!-- 系统设置 -->
+						<li class="layui-nav-item">
+							<a href="javascript:;">
+								<i class="iconfont icon-xitong"></i>
+								<span>系统设置</span>
+								<em class="layui-nav-more"></em>
+							</a>
+							<dl class="layui-nav-child">
+								<dd>
+									<a href="javascript:;">
+										<i class="iconfont icon-zhandianpeizhi" data-icon='icon-zhandianpeizhi'></i>
+										<span>基本参数设置</span>
+									</a>
+								</dd>
+								
+								<dd>
+									<a href="javascript:;">
+										<i class="iconfont icon-anquanshezhi" data-icon='icon-anquanshezhi'></i>
+										<span>安全设置</span>
+									</a>
+								</dd>
+								
+								<dd>
+									<a href="javascript:;">
+										<i class="iconfont icon-iconfuzhi01" data-icon='icon-iconfuzhi01'></i>
+										<span>系统日志管理</span>
+									</a>
+								</dd>
+								<dd>
+									<a href="javascript:;">
+										<i class='iconfont icon-SQLServershujuku' data-icon='icon-SQLServershujuku'></i>
+										<span>SQL命令行工具</span>
+									</a>
+								</dd>
+								
+							</dl>
+						</li>
+
+					</ul>
+				</div>
+			</div>
+
+			<!-- 左侧侧边导航结束 -->
+			<!-- 右侧主体内容 -->
+			<div class="layui-body" id="larry-body" style="bottom: 0;border-left: solid 2px #1AA094;">
+				<div class="layui-tab layui-tab-card larry-tab-box" id="larry-tab" lay-filter="demo" lay-allowclose="true">
+					<ul class="layui-tab-title">
+						<li class="layui-this" id="admin-home"><i class="iconfont icon-diannao1"></i><em>后台首页</em></li>
+					</ul>
+					<div class="layui-tab-content" style="min-height:800px; ">
+						<div class="layui-tab-item layui-show">
+							<iframe class="larry-iframe" data-id='0' src="dataSearch.html"></iframe>
+						</div>
+					</div>
+				</div>
+
+			</div>
+			<!-- 底部区域 -->
+			<!--<div class="layui-footer layui-larry-foot" id="larry-footer">
+				<div class="layui-mian">
+					<div class="larry-footer-left">
+						gomine企业信息查询管理系统
+					</div>
+					<p class="p-admin">
+						<span>2016 &copy;</span> Write by Arron
+						<a href="http://wwww.gomine.cn">gomineCMS</a>. 版权所有 @数海智库营销（北京）有限公司
+					</p>
+				</div>
+			</div>-->
+		</div>
+		<!-- 加载js文件-->
+		<script type="text/javascript" src="../common/layui/layui.js"></script>
+		<script type="text/javascript" src="js/larry.js"></script>
+		<script type="text/javascript" src="js/index.js"></script>
+		
+	</body>
+
+</html>
