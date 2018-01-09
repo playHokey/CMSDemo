@@ -263,6 +263,10 @@
 						}
 						
 					})
+					var itemLength=$(".crumb-select-item").length;
+					if (itemLength==0) {
+							$("#qcbtn").css("display", "none");
+						}
 				});
 
           
@@ -288,7 +292,8 @@
 						tianjaneir = "<span class='crumb-select-item'><a href='/'><b>" + zhiclass + "</b><em>" + zhicon + "</em><i class='fa fa-times'></i></a></span>"
 						$(".shaixuan-tj").children().last().after(tianjaneir);
 						THIP.css("display", "none");
-						$("#qcbtn").css("display", "block");
+						
+						if ($("#qcbtn").css("display")=="none") $("#qcbtn").css("display", "block");
 					}
 					
 				});
