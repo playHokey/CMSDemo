@@ -35,6 +35,8 @@
 				overflow-y: scroll;
 				color: #333;
 			}
+			
+			
 		</style>
 	</head>
 
@@ -66,23 +68,24 @@
 			</div>
 			<div class="container-fluid">
 				<div class="row">
-				  <div class="col-md-8">
-				  	<div class=" search-box-detail left-size ">
-						<div class=" clearfix  ">
-							<p class="shaixuan-tj floatLeft clearfix ">
-								<span><a href="/">全部结果:</a></span>
-								<i class="icon-angle-right"></i>
-								<span><strong></strong></span>
-								<i class="icon-angle-right"></i>
-							</p>
-							<p id="sxbtn" class="shaixuan-btn clearfix"><span><em>收起筛选</em><i class=" fa fa-angle-up"></i></span></p>
+					<div class="col-md-8">
+						<div class=" search-box-detail left-size ">
+							<div class=" clearfix  ">
+								<p class="shaixuan-tj floatLeft clearfix ">
+									<span><a href="/">全部结果:</a></span>
+									<i class="icon-angle-right"></i>
+									<span><strong></strong></span>
+									<i class="icon-angle-right"></i>
+								</p>
+								<p id="sxbtn" class="shaixuan-btn clearfix"><span><em>收起筛选</em><i class=" fa fa-angle-up"></i></span></p>
+								<p id="qcbtn" class="shaixuan-btn clearfix" style="display: none;"><span><!--<em>清空</em>--><i class=" fa fa-trash"></i></span></p>
+
+							</div>
 						</div>
-						</div>
-				  </div>
-					
-						<div class="col-md-8 " >
-							
-						
+					</div>
+
+					<div class="col-md-8 ">
+
 						<div id="page-search-store" class="mb10 border sxcon">
 							<div class="search-by by-category relative">
 								<dl class="relative clearfix">
@@ -99,13 +102,11 @@
 										<a href="/" class="">网址</a>
 										<a href="/" class="">产品</a>
 										<a href="/" class="">商标</a>
-										
 
 									</dd>
 									<dd class="floatLeft show-more">
 										<h3 class="pointer clearfix"><span>更多</span><i class="fa fa-angle-down"></i></h3></dd>
 								</dl>
-								
 
 							</div>
 							<div class="search-by by-category relative">
@@ -117,14 +118,11 @@
 										<a href="/" class="">200万 - 500万</a>
 										<a href="/" class="">500万 - 1000万</a>
 										<a href="/" class="nzw12">1000万以上</a>
-										
-										
 
 									</dd>
 									<dd class="floatLeft show-more">
 										<h3 class="pointer clearfix"><span>更多</span><i class="fa fa-angle-down"></i></h3></dd>
 								</dl>
-								
 
 							</div>
 							<div class="search-by by-category relative">
@@ -137,17 +135,14 @@
 										<a href="/" class="">10-15年 </a>
 										<a href="/" class="nzw12">15-20年</a>
 										<a href="/" class="">20年以上</a>
-										
-										
 
 									</dd>
 									<dd class="floatLeft show-more">
 										<h3 class="pointer clearfix"><span>更多</span><i class="fa fa-angle-down"></i></h3></dd>
 								</dl>
-								
 
 							</div>
-							
+
 							<div class="search-by by-category relative">
 								<dl class="relative clearfix">
 									<dt class="floatLeft"><a href="/">注册地区：</a></dt>
@@ -189,19 +184,15 @@
 										<a href="/" class="">香港</a>
 										<a href="/" class="">澳门</a>
 										<a href="/" class="">台湾</a>
-										
-										
 
 									</dd>
 									<dd class="floatLeft show-more">
 										<h3 class="pointer clearfix"><span>更多</span><i class="fa fa-angle-down"></i></h3></dd>
 								</dl>
-								
 
 							</div>
 						</div>
-						
-                        
+
 					</div>
 					<div class="col-md-12 search-box-detail left-size ">
 
@@ -270,8 +261,23 @@
 							THI.removeClass("nzw12");
 							THIPP.css("display", "block");
 						}
+						
 					})
 				});
+
+          
+				/*重设筛选*/
+				$("#qcbtn").click(function(event) {
+					$(".shaixuan-tj span.crumb-select-item").remove();
+					var TTR = $(".shaixuan-tj span.crumb-select-item").find("em").text();
+					var TT = $(".show-con a").text();
+					THI = $(".show-con a");
+					THIPP = $(".show-con a").parents("dl");
+					THI.removeClass("nzw12");
+					THIPP.css("display", "block");
+                   $("#qcbtn").css("display", "none");
+				});
+               /*条件过滤*/
 				$(".show-con a").click(function(event) {
 					event.preventDefault();
 					THIP = $(this).parents("dl");
@@ -282,8 +288,13 @@
 						tianjaneir = "<span class='crumb-select-item'><a href='/'><b>" + zhiclass + "</b><em>" + zhicon + "</em><i class='fa fa-times'></i></a></span>"
 						$(".shaixuan-tj").children().last().after(tianjaneir);
 						THIP.css("display", "none");
+						$("#qcbtn").css("display", "block");
 					}
+					
 				});
+				
+				
+				/*搜索内容元素收起展示*/
 				$(".show-more").click(function(event) {
 					event.preventDefault();
 					var ticon = $(this).find("i");
@@ -302,6 +313,7 @@
 						$(this).addClass("zk")
 					}
 				});
+	            /*展开收起筛选*/
 				$("#sxbtn").click(function(event) {
 					event.preventDefault();
 					var xicon = $(this).find("span i");
